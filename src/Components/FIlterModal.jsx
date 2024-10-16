@@ -9,7 +9,7 @@ const FIlterModal = ({closeModal}) => {
 
 
   return (
-    <div className='fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50  '>
+    <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50  '>
       <div className='bg-black text-white p-8 rounded-lg w-full max-w-2xl shadow-lg'>
         <h2 className='text-2xl mb-6'>Filter Content Just for You</h2>
 

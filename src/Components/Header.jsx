@@ -112,7 +112,7 @@ const Header = () => {
         <FaSearch
           className={
             navbar
-              ? 'text-stone-800 bg-transparent text-4xl rounded-md p-2  border-[1px] border-stone-700  duration-300 ease-in'
+              ? 'text-stone-800 bg-transparent text-4xl rounded-md p-2  border-[1px] border-stone-700 cursor-pointer duration-300 ease-in'
               : 'text-stone-300 text-4xl duration-300 ease-in p-2 border-[1px] border-stone-700 rounded-md cursor-pointer'
           }
         />
@@ -120,7 +120,7 @@ const Header = () => {
         <FaBell
           className={
             navbar
-              ? 'text-stone-800 bg-transparent text-4xl rounded-md p-2  border-[1px] border-stone-700  duration-300 ease-in'
+              ? 'text-stone-800 bg-transparent text-4xl rounded-md p-2  border-[1px] border-stone-700 cursor-pointer duration-300 ease-in'
               : 'text-stone-300 text-4xl duration-300 ease-in p-2 border-[1px] border-stone-700 rounded-md cursor-pointer'
           }
         />
@@ -128,7 +128,7 @@ const Header = () => {
         <IoIosFunnel
           className={
             navbar
-              ? 'text-stone-800 bg-transparent text-4xl rounded-md p-2  border-[1px] border-stone-700  duration-300 ease-in'
+              ? 'text-stone-800 bg-transparent text-4xl rounded-md p-2  border-[1px] border-stone-700 cursor-pointer duration-300 ease-in'
               : 'text-stone-300 text-4xl duration-300 ease-in p-2 border-[1px] border-stone-700 rounded-md cursor-pointer'
           }
         />

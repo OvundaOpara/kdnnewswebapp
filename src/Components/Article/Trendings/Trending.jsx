@@ -9,14 +9,14 @@ import { CiImageOn } from 'react-icons/ci'
 const Trending = () => {
   return (
     <div className='lg:px-24 flex flex-col px-4 my-10'>
-      <p className='text-white bg-[#CF0807] mb-6 py-2 w-[10%] text-center rounded-lg'>
+      <p className='text-white bg-[#CF0807] mb-6 py-2 lg:w-[10%] w-[200px] text-center rounded-lg'>
         Trending
       </p>
 
       <div className='flex flex-col'>
-        <div className='flex  items-start mb-8 justify-between'>
+        <div className='flex gap-4  items-start mb-8 justify-between'>
           <div className='flex flex-col  w-[80%]'>
-            <h1 className='text-stone-400 text-5xl font-bold '>
+            <h1 className='text-stone-400 lg:text-5xl text-3xl font-bold '>
               The Power Of Connection Building Meaningful Relationship
             </h1>
             <div className='flex items-center my-4 justify-start gap-5 '>
@@ -42,8 +42,8 @@ const Trending = () => {
           </div>
         </div>
 
-        <div className='flex gap-10 mb-6'>
-          <div className='flex flex-col'>
+        <div className='flex flex-wrap gap-6 mb-6'>
+          <div className='flex flex-col lg:w-[75%] w-[100%] '>
             <h1 className='text-stone-300 mb-6 text-xl '>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Excepturi expedita ullam molestiae similique! Repellendus labore
@@ -163,11 +163,11 @@ const Trending = () => {
             </h1>
           </div>
 
-          <div className='flex flex-col'>
+          <div className='flex flex-col lg:w-[20%] w-[100%]'>
             <h1 className='text-4xl font-bold text-stone-300 '>Top stories</h1>
             <div className='flex flex-col items-center justify-center gap-12 mt-[50px] '>
               {TRENDING.map((item, index) => (
-                <div className='flex flex-col w-[400px] border-[1px] border-stone-300 rounded-xl pb-2 '>
+                <div className='flex flex-col w-[100%] border-[1px] border-stone-300 rounded-xl pb-2 '>
                   <div className='flex bg-stone-600 h-[200px] items-center justify-center rounded-xl w-full'></div>
                   <div className='flex flex-col px-2'>
                     <h1 className='text-xl text-stone-300'>{item.name}</h1>
@@ -197,7 +197,7 @@ const Trending = () => {
         </div>
 
         <div className='flex flex-col'>
-          <div className='flex flex-wrap mb-6 bg-stone-600 h-[400px] items-center justify-center rounded-xl w-[400px] lg:w-[100%]'>
+          <div className='flex flex-wrap mb-6 bg-stone-600 h-[400px] items-center justify-center rounded-xl w-[100%] lg:w-[100%]'>
             <CiImageOn className='text-white bg-stone-600 text-3xl' />
           </div>
           <p className='text-stone-200 text-xl'>

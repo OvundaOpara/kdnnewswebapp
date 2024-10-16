@@ -10,6 +10,9 @@ import Home from './Pages/Home'
 import Categories from './Pages/Categories'
 import Articles from './Pages/Articles'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(

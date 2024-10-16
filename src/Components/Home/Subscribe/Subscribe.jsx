@@ -17,9 +17,9 @@ const Subscribe = () => {
       <div className='flex items-center justify-center gap-3 lg:w-[50%] w-[400px] my-3 '>
         <input
           type='text '
-          className='w-full bg-stone-400 py-4 px-2 text-lg rounded-xl outline-none'
+          className='w-full bg-stone-400 py-3 px-2 text-lg rounded-xl outline-none'
         />
-        <button className='bg-[#CF0807] py-4 px-6 text-stone-300 text-lg rounded-lg '>
+        <button className='bg-[#CF0807] py-3 px-6 text-stone-300 text-lg rounded-lg '>
           Subscribe{' '}
         </button>
       </div>
