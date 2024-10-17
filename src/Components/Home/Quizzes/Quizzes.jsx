@@ -10,7 +10,7 @@ const Quizzes = () => {
   }
 
   return (
-    <div className='lg:px-24 flex flex-col px-4'>
+    <div className='lg:px-24 flex flex-col px-9'>
       <h2 className='my-16 text-center t text-4xl text-stone-300'>Quizzes</h2>
 
       <div className='flex flex-wrap items-center justify-center gap-10 mt-[10px] '>

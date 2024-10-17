@@ -160,6 +160,100 @@ export const ADS = [
 
 
 ];
+export const MOVIES = [
+    {
+
+        name: "Action/Adventure Movies",
+
+    },
+    {
+
+        name: "Comedy Movies",
+
+    },
+    {
+
+        name: "Drame",
+
+    },
+    {
+
+        name: "Science /Fantasy Movies",
+
+    }
+
+
+];
+export const SPORT = [
+    {
+
+        name: "Team Sports",
+
+    },
+    {
+
+        name: "Individual Sports",
+
+    },
+    {
+
+        name: "Combat Sports",
+
+    },
+    {
+
+        name: "Racquet Sports",
+
+    }
+
+];
+export const HOLLYWOOD = [
+    {
+
+        name: "Film Production",
+
+    },
+    {
+
+        name: "Television",
+
+    },
+    {
+
+        name: "Celebrities and Talent",
+
+    },
+    {
+
+        name: "Entertainment & Distribution",
+
+    }
+    
+];
+export const LIFESTYLE = [
+    {
+
+        name: "Health & Wellness",
+
+    },
+    {
+
+        name: "Work & Career",
+
+    },
+    {
+
+        name: "Social & Relationships",
+
+    },
+    {
+
+        name: "Leisure & Hobbies",
+
+    }
+
+
+];
 export const QZ = [
     {
 

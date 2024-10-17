@@ -1,5 +1,6 @@
 import React from 'react'
-import { AI } from '../../../Data/Datas'
+import { AI } from '../../Data/Datas'
+
  
 
 const Recommendation = ({heading}) => {

@@ -3,6 +3,8 @@ import { FaRegClock } from 'react-icons/fa'
 import { CiImageOn } from 'react-icons/ci'
 
 import { author } from '../../../assets/Images'
+import { Link } from 'react-router-dom'
+import FIlterHeader from '../../FIlterHeader'
 
 const HeroContents = () => {
   const [showFullDescribtion, setShowFullDescribtion] = useState(false)
@@ -18,34 +20,9 @@ const HeroContents = () => {
 
   return (
     <div>
-      <div className='flex flex-wrap overflow-x-scroll'>
-        <ul className='flex lg:gap-7 gap-10 '>
-          <li className='text-stone-300 cursor-pointer w-[60px] border-transparent  hover:text-[#CF0807] border-b-[2px] hover:border-b-[#CF0807] '>
-            For You
-          </li>
-          <li className='text-stone-300 cursor-pointer  border-transparent  hover:text-[#CF0807] border-b-[2px] hover:border-b-[#CF0807] '>
-            Movies
-          </li>
-          <li className='text-stone-300 cursor-pointer  border-transparent  hover:text-[#CF0807] border-b-[2px] hover:border-b-[#CF0807] '>
-            Sport
-          </li>
-          <li className='text-stone-300 cursor-pointer  border-transparent  hover:text-[#CF0807] border-b-[2px] hover:border-b-[#CF0807] '>
-            Hollywood
-          </li>
-          <li className='text-stone-300 cursor-pointer  border-transparent  hover:text-[#CF0807] border-b-[2px] hover:border-b-[#CF0807] '>
-            Lifestyle
-          </li>
-          <li className='text-stone-300 cursor-pointer  border-transparent  hover:text-[#CF0807] border-b-[2px] hover:border-b-[#CF0807] '>
-            Fashion
-          </li>
-          <li className='text-stone-300 cursor-pointer  border-transparent  hover:text-[#CF0807] border-b-[2px] hover:border-b-[#CF0807] '>
-            Health(GHIR)
-          </li>
-        </ul>
-      </div>
-
-      <div className='flex flex-wrap w-full items-center gap-6 mt-14'>
-        <div className='flex flex-col lg:w-[50%] w-[600px] '>
+      <FIlterHeader />
+      <div className='grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 w-full  place-items-center gap-16 mt-14'>
+        <div className='flex flex-col lg:w-[100%] w-[100%] '>
           <h1 className='text-stone-300 text-5xl'>
             The Power Of Connection Building Meaningful Relationship
           </h1>
@@ -78,33 +55,37 @@ const HeroContents = () => {
           </p>
         </div>
 
-        <div className='flex flex-wrap bg-stone-600 h-[400px] items-center justify-center rounded-xl w-[400px] lg:w-[30%]'>
-          <CiImageOn className='text-white bg-stone-600 text-3xl' />
-        </div>
-        <div className='flex flex-col  rounded-xl  border-stone-400 border-[1px] lg:w-[16%] w-[400px]'>
-          <div className='flex bg-stone-600 h-[200px] items-center justify-center rounded-xl w-full'></div>
-          <div className='flex flex-col px-1 my-2'>
-            <h2 className='text-xl text-white'>Elections</h2>
-            <p className=' text-white'>"Election Updates: What’s at Stake?"</p>
-            <p className='text-sm text-stone-200'>
-              "A comprehensive breakdown of the upcoming elections and their
-              implications."
-            </p>
-            <div className='flex items-center my-3 justify-start gap-5 '>
-              <p className='text-stone-400 text-sm flex items-center gap-1 justify-center'>
-                {' '}
-                <FaRegClock /> 23 Sept 2024{' '}
+        <div className='grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 place-items-center gap-24 w-full'>
+          <div className='flex flex-wrap bg-stone-600 h-[400px] items-center justify-center rounded-xl lg:w-[500px] w-[100%] xl:w-[400px] '>
+            <CiImageOn className='text-white bg-stone-600 text-3xl' />
+          </div>
+          <div className='flex flex-col  rounded-xl  border-stone-400 border-[1px] lg:w-[100%] w-full xl:w-[100%]  '>
+            <div className='flex bg-stone-600 h-[200px] items-center justify-center rounded-xl w-full'></div>
+            <div className='flex flex-col px-1 my-2'>
+              <h2 className='text-xl text-white'>Elections</h2>
+              <p className=' text-white'>
+                "Election Updates: What’s at Stake?"
               </p>
-              <p className='text-stone-400 flex items-center text-sm gap-2'>
-                {' '}
-                <img
-                  src={author}
-                  alt=''
-                  width={20}
-                  className='rounded-full'
-                />{' '}
-                <span className='text-stone-300'>by</span> Stark{' '}
+              <p className='text-sm text-stone-200'>
+                "A comprehensive breakdown of the upcoming elections and their
+                implications."
               </p>
+              <div className='flex items-center my-3 justify-start gap-5 '>
+                <p className='text-stone-400 text-sm flex items-center gap-1 justify-center'>
+                  {' '}
+                  <FaRegClock /> 23 Sept 2024{' '}
+                </p>
+                <p className='text-stone-400 flex items-center text-sm gap-2'>
+                  {' '}
+                  <img
+                    src={author}
+                    alt=''
+                    width={20}
+                    className='rounded-full'
+                  />{' '}
+                  <span className='text-stone-300'>by</span> Stark{' '}
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import { author } from '../../../../assets/Images'
 
 const Articles = () => {
   return (
-    <div className='lg:px-24 flex flex-col px-4'>
+    <div className='lg:px-24 flex flex-col px-9'>
       <h2 className='my-20 text-center t text-4xl text-stone-300'>
         Trending Articles
       </h2>

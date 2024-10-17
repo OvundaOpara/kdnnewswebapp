@@ -5,7 +5,7 @@ import { HERO } from '../../../Data/Datas'
 
 const News = ({headline}) => {
   return (
-    <div className='lg:px-24 flex flex-col px-4'>
+    <div className='lg:px-24 flex flex-col px-9'>
       <h2 className='my-5 text-center t text-4xl text-stone-300'>
         {headline}
       </h2>

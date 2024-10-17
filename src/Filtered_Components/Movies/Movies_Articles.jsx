@@ -1,12 +1,12 @@
 import React from 'react'
 import { FaRegClock } from 'react-icons/fa'
-import { author } from '../../../assets/Images'
+import { author } from '../../assets/Images'
 
-const Cate_Articles = () => {
+const Movies_Articles = () => {
   return (
     <div className='lg:px-24 flex flex-col px-9'>
       <h2 className='my-20 text-center t text-4xl text-stone-300'>
-        Trending Articles
+        Trending Movies
       </h2>
 
       <div className='flex flex-wrap items-center justify-center gap-12 mt-[10px] '>
@@ -132,4 +132,4 @@ const Cate_Articles = () => {
   )
 }
 
-export default Cate_Articles
+export default Movies_Articles

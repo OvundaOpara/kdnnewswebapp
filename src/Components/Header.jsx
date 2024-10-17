@@ -1,13 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FooterIcon, HeroIcon } from '../assets/Icons/Index'
 import { FaBell, FaSearch } from 'react-icons/fa'
 import { IoIosFunnel } from 'react-icons/io'
 import { RiMenu2Line } from 'react-icons/ri'
 import { Link } from 'react-router-dom'
+import FIlterModal from './FIlterModal'
 
 const Header = () => {
   const [showMenu, SetShowMenu] = useState(false)
   const [navbar, setNavbar] = useState(false)
+
+  //MODAL TOOLTIP
+  const [showModal, setShowModal] = useState(false)
+
+  useEffect(() => {
+    setShowModal(false)
+  }, [])
+
+  const handleCloseModal = () => {
+    setShowModal(false)
+  }
 
   const handleToggleMenu = () => {
     SetShowMenu(!showMenu)
@@ -29,10 +41,11 @@ const Header = () => {
     <div
       className={
         navbar
-          ? 'flex items-center lg:px-24 px-4 justify-between fixed top-0 duration-500 ease-in left-0 z-40 w-full bg-stone-300 shadow-xl  h-[90px]    '
-          : 'flex items-center lg:px-24 px-4 justify-between  duration-500 ease-in left-0 z-40 w-full h-[90px]   '
+          ? 'flex items-center inset-0 lg:px-24 px-5 justify-between fixed top-0 duration-500 ease-in left-0 z-40 w-full bg-stone-300 shadow-xl  h-[90px]    '
+          : 'flex items-center inset-0 lg:px-24 px-5 justify-between  duration-500 ease-in left-0 z-40 w-full h-[90px]   '
       }
     >
+      {showModal && <FIlterModal closeModal={handleCloseModal} />}
       <div className='flex items-center  bg-transparent lg:w-[10%]   justify-center'>
         <img
           src={HeroIcon}
@@ -50,7 +63,7 @@ const Header = () => {
             <li
               className={
                 navbar
-                  ? 'text-lg cursor-pointer text-black bg-transparent hover:text-gray-600 font-medium duration-300 ease-in'
+                  ? 'text-lg cursor-pointer text-black inset-1 hover:text-gray-600 font-medium duration-300 ease-in'
                   : 'text-lg cursor-pointer text-stone-300  hover:text-[#CF0807] hover:underline  font-medium duration-300 ease-in'
               }
             >
@@ -64,10 +77,10 @@ const Header = () => {
                 : 'text-lg cursor-pointer text-stone-300  hover:text-[#CF0807] hover:underline  font-medium duration-300 ease-in'
             }
           >
-            <Link to='/category' className='bg-transparent'>Category</Link>
+            <Link to='/category' className='bg-transparent'>
+              Category
+            </Link>
           </li>
-
-       
 
           <li
             className={
@@ -76,7 +89,9 @@ const Header = () => {
                 : 'text-lg cursor-pointer text-stone-300  hover:text-[#CF0807] hover:underline  font-medium duration-300 ease-in'
             }
           >
-            <Link to='/article' className='bg-transparent'>Articles</Link>
+            <Link to='/article' className='bg-transparent'>
+              Articles
+            </Link>
           </li>
           <li
             className={
@@ -126,6 +141,7 @@ const Header = () => {
         />
 
         <IoIosFunnel
+        onClick={() => setShowModal(prevState => !prevState)}
           className={
             navbar
               ? 'text-stone-800 bg-transparent text-4xl rounded-md p-2  border-[1px] border-stone-700 cursor-pointer duration-300 ease-in'

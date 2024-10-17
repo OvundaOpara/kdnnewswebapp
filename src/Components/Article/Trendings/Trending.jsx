@@ -8,7 +8,7 @@ import { CiImageOn } from 'react-icons/ci'
 
 const Trending = () => {
   return (
-    <div className='lg:px-24 flex flex-col px-4 my-10'>
+    <div className='lg:px-24 flex flex-col px-9 my-10'>
       <p className='text-white bg-[#CF0807] mb-6 py-2 lg:w-[10%] w-[200px] text-center rounded-lg'>
         Trending
       </p>

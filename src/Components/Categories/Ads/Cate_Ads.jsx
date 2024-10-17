@@ -23,7 +23,7 @@ const Cate_Ads = () => {
   }
 
   return (
-    <div className='lg:px-24 px-4 my-24'>
+    <div className='lg:px-24 px-9 my-24'>
       <Slider {...settings} className='flex items-center justify-center '>
         {ADS.map((ads, index) => (
           <div

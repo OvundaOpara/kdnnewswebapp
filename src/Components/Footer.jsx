@@ -10,7 +10,7 @@ import { FooterIcon } from '../assets/Icons/Index'
 
 const Footer = () => {
   return (
-    <div className='lg:px-24 flex mt-24 flex-col items-center justify-center   px-4'>
+    <div className='lg:px-24 flex mt-24 flex-col items-center justify-center   px-9'>
       <div className='flex flex-wrap gap-10 items-center my-5 justify-between w-full'>
         <div className='flex flex-col '>
           <img src={FooterIcon} alt='' width={100} />

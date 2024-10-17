@@ -1,13 +1,10 @@
 import React from 'react'
-import { AI } from '../../../Data/Datas'
- 
+import { AI } from '../../Data/Datas'
 
-const Recommendation = ({heading}) => {
+const Recommendation = ({ heading }) => {
   return (
     <div className='lg:px-24 flex flex-col px-9'>
-      <h2 className='my-12 text-center t text-4xl text-stone-300'>
-        {heading}
-      </h2>
+      <h2 className='my-12 text-center t text-4xl text-stone-300'>{heading}</h2>
 
       <div className='flex flex-wrap items-center justify-center gap-12 mt-[50px] '>
         {AI.map((item, index) => (
