@@ -4,10 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  box-sizing: border-box;
+* {
+
   font-family: 'Bricolage Grotesque', sans-serif;
-  background: #000;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -27,7 +27,3 @@
   background: linear-gradient(50deg, transparent, #06061f);
   border-radius: 2px;
 }
-
-
-
-

@@ -34,7 +34,7 @@ const News = ({headline}) => {
             </p>
           </div>
           <div className='flex gap-5'>
-            <button className='bg-[#CF0807] hover:bg-[#EF5454] duration-300 ease-out text-slate-300 py-2 px-4 rounded-md '>
+            <button className='bg-[#CF0807] hover:bg-[#EF5454] duration-300 text-slate-300 py-2 px-4 rounded-md '>
               See All
             </button>
             <button className='border-[#CF0807] text-stone-300 border-[2px] py-2 px-4 rounded-md'>

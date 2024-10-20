@@ -15,6 +15,7 @@ import Movies_index from './Pages/FIltered_pages/Movies/Movies_index'
 import Sport_index from './Pages/FIltered_pages/Sport/Sport_index'
 import Hollywood_index from './Pages/FIltered_pages/Hollywood/Hollywood_index'
 import Lifestyle_index from './Pages/FIltered_pages/Lifestyle/Lifestyle_index'
+import Fashion_index from './Pages/FIltered_pages/Fashion/Fashion_index'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -26,13 +27,14 @@ const router = createBrowserRouter(
       <Route path='/sport' element={<Sport_index />} />
       <Route path='/hollywood' element={<Hollywood_index />} />
       <Route path='/lifestyle' element={<Lifestyle_index />} />
+      <Route path='/fashion' element={<Fashion_index />} />
     </Route>
   )
 )
 
 function App () {
   return (
-    <div className='overflow-x-hidden'>
+    <div className='overflow-x-hidden bg-black '>
       <RouterProvider router={router} />
     </div>
   )

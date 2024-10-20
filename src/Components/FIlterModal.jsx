@@ -79,7 +79,7 @@ const FIlterModal = ({closeModal}) => {
           <button onClick={handleFilterItems} className='border-[#CF0807] border-[2px] uppercase px-4 py-2 rounded'>
             Clear
           </button>
-          <button onClick={handleFilterItems} className='bg-[#CF0807] uppercase hover:bg-[#cf0707c0] px-4 py-2 rounded'>
+          <button onClick={handleFilterItems} className='bg-[#CF0807] uppercase hover:bg-[#EF5454] px-4 py-2 rounded'>
             Apply Filters
           </button>
         </div>

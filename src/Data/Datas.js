@@ -254,6 +254,30 @@ export const LIFESTYLE = [
 
 
 ];
+export const FASHION = [
+    {
+
+        name: "Casual",
+
+    },
+    {
+
+        name: "Formal",
+
+    },
+    {
+
+        name: "Streetwear",
+
+    },
+    {
+
+        name: "Athleisure",
+
+    }
+
+
+];
 export const QZ = [
     {
 

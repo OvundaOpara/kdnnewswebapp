@@ -4,13 +4,13 @@ import { author } from '../../../assets/Images'
 
 const Art_Articles = () => {
   return (
-    <div className='lg:px-24 flex flex-col px-9'>
+    <div className='lg:px-24 flex flex-col px-5'>
       <h2 className='my-20 text-center t text-4xl text-stone-300'>
         Trending Articles
       </h2>
 
-      <div className='flex flex-wrap items-center justify-center gap-12 mt-[10px] '>
-        <div className='flex flex-col lg:w-[31%] w-[500px] gap-3  '>
+      <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  items-center justify-center gap-12 mt-[10px] '>
+        <div className='flex flex-col lg:w-[100%] w-[100%] gap-3  '>
           <div className='flex flex-col border-[1px] border-stone-500 rounded-xl '>
             <div className='flex bg-stone-600 h-[200px] items-center justify-center rounded-xl w-full'></div>
             <h3 className='text-2xl px-2 font-bold text-white'>
@@ -57,7 +57,7 @@ const Art_Articles = () => {
           </div>
         </div>
 
-        <div className='flex flex-col lg:w-[31%] w-[500px]  '>
+        <div className='flex flex-col lg:w-[100%] w-[100%]  '>
           <div className='flex flex-col border-[1px] border-stone-500 rounded-xl '>
             <div className='flex bg-stone-600 h-[490px] items-center justify-center rounded-xl w-full'></div>
             <h3 className='text-2xl font-bold text-white px-2'>
@@ -81,8 +81,8 @@ const Art_Articles = () => {
             </div>
           </div>
         </div>
-        <div className='flex flex-col lg:w-[31%] w-[500px] gap-3 '>
-          <div className='flex flex-col border-[1px] border-stone-500 rounded-xl '>
+        <div className='flex flex-col lg:flex-row xl:flex-col lg:w-[210%] xl:w-[100%] w-[100%] gap-3 '>
+          <div className='flex flex-col border-[1px] w-full border-stone-500 rounded-xl '>
             <div className='flex bg-stone-600 h-[200px] items-center justify-center rounded-xl w-full'></div>
             <h3 className='text-2xl font-bold text-white px-2'>
               How to stay fit during the holidays
@@ -104,7 +104,7 @@ const Art_Articles = () => {
               </p>
             </div>
           </div>
-          <div className='flex flex-col rounded-xl border-[1px] border-stone-500 '>
+          <div className='flex flex-col w-full rounded-xl border-[1px] border-stone-500 '>
             <div className='flex bg-stone-600 h-[200px] items-center justify-center rounded-xl w-full'></div>
             <h3 className='text-2xl font-bold text-white px-2'>
               How to stay fit during the holidays

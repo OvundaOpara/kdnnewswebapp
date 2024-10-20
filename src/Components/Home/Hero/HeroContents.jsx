@@ -21,7 +21,7 @@ const HeroContents = () => {
   return (
     <div>
       <FIlterHeader />
-      <div className='grid xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 w-full  place-items-center gap-16 mt-14'>
+      <div className='grid  xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 w-full  place-items-center gap-16 mt-14'>
         <div className='flex flex-col lg:w-[100%] w-[100%] '>
           <h1 className='text-stone-300 text-5xl'>
             The Power Of Connection Building Meaningful Relationship
@@ -43,7 +43,7 @@ const HeroContents = () => {
             </p>
           </div>
 
-          <p className='text-stone-300 text-lg '>
+          <p className='text-stone-300 text-xl '>
             {describtion}{' '}
             <p
               onClick={() => setShowFullDescribtion(prevState => !prevState)}
@@ -55,27 +55,27 @@ const HeroContents = () => {
           </p>
         </div>
 
-        <div className='grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 place-items-center gap-24 w-full'>
-          <div className='flex flex-wrap bg-stone-600 h-[400px] items-center justify-center rounded-xl lg:w-[500px] w-[100%] xl:w-[400px] '>
+        <div className='grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 place-items-center  gap-24 w-full'>
+          <div className='flex flex-wrap bg-stone-600 hover:scale-110 duration-300 ease-in cursor-pointer h-[400px] items-center justify-center rounded-xl lg:w-[500px] w-[100%] xl:w-[400px] '>
             <CiImageOn className='text-white bg-stone-600 text-3xl' />
           </div>
-          <div className='flex flex-col  rounded-xl  border-stone-400 border-[1px] lg:w-[100%] w-full xl:w-[100%]  '>
-            <div className='flex bg-stone-600 h-[200px] items-center justify-center rounded-xl w-full'></div>
-            <div className='flex flex-col px-1 my-2'>
-              <h2 className='text-xl text-white'>Elections</h2>
-              <p className=' text-white'>
+          <div className='flex flex-col group relative rounded-xl h-[400px]  lg:w-[100%] w-full xl:w-[100%]  '>
+            <div className='flex bg-[#3d3c3c70]  absolute top-0 left-0 w-full h-[50%] origin-top group-hover:h-full transition-all duration-500 ease-in-out items-center justify-center rounded-xl'></div>
+            <div className='flex flex-col bg-transparent gap-3 px-1 mt-[200px] z-20 '>
+              <h2 className='text-xl text-white bg-transparent'>Elections</h2>
+              <p className=' text-white bg-transparent'>
                 "Election Updates: What’s at Stake?"
               </p>
-              <p className='text-sm text-stone-200'>
+              <p className='text-sm text-stone-200 bg-transparent'>
                 "A comprehensive breakdown of the upcoming elections and their
                 implications."
               </p>
-              <div className='flex items-center my-3 justify-start gap-5 '>
-                <p className='text-stone-400 text-sm flex items-center gap-1 justify-center'>
+              <div className='flex items-center bg-transparent my-3 justify-start gap-5 '>
+                <p className='text-stone-400 text-sm flex items-center gap-1 bg-transparent justify-center'>
                   {' '}
-                  <FaRegClock /> 23 Sept 2024{' '}
+                  <FaRegClock className='bg-transparent' /> 23 Sept 2024{' '}
                 </p>
-                <p className='text-stone-400 flex items-center text-sm gap-2'>
+                <p className='text-stone-400 flex bg-transparent items-center text-sm gap-2'>
                   {' '}
                   <img
                     src={author}
@@ -83,7 +83,7 @@ const HeroContents = () => {
                     width={20}
                     className='rounded-full'
                   />{' '}
-                  <span className='text-stone-300'>by</span> Stark{' '}
+                  <span className='text-stone-300 bg-transparent'>by</span> Stark{' '}
                 </p>
               </div>
             </div>

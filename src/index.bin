@@ -1,60 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { FooterIcon, HeroIcon } from '../assets/Icons/Index'
-import { FaBell, FaSearch } from 'react-icons/fa'
-import { IoIosFunnel } from 'react-icons/io'
-import { RiMenu2Line } from 'react-icons/ri'
-import { NavLink } from 'react-router-dom'
-import FIlterModal from './FIlterModal'
-import { IoClose } from 'react-icons/io5'
-
-const Header = () => {
-  const [showMenu, SetShowMenu] = useState(false)
-  const [navbar, setNavbar] = useState(false)
-
-  //MODAL TOOLTIP
-  const [showModal, setShowModal] = useState(false)
-
-  useEffect(() => {
-    setShowModal(false)
-  }, [])
-
-  const handleCloseModal = () => {
-    setShowModal(false)
-  }
-
-  const handleToggleMenu = () => {
-    SetShowMenu(!showMenu)
-
-    if (!showMenu) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
+ <div
+    className={
+      navbar
+        ? 'flex items-center lg:px-24 px-4 justify-between fixed top-0 duration-300 ease-in left-0 z-40 w-full bg-stone-300 shadow-xl  h-[90px] py-5 '
+        : 'flex items-center lg:px-24 px-4  justify-between fixed top-0 duration-300 ease-in left-0 z-40 w-full h-[90px] py-5 '
     }
-  }
-
-  //HANDLING THE BACKGROUND COLOR WHEN SCROLLED
-  const HandleBgChange = () => {
-    if (window.scrollY >= 60) {
-      setNavbar(true)
-    } else {
-      setNavbar(false)
-    }
-  }
-
-  //ADDING AN EVENTLISTENER TO CALL THE HANDLEBGCHANGE()
-  window.addEventListener('scroll', HandleBgChange)
-
-  return (
-    <div
-      className={
-        navbar
-          ? 'flex items-center z-50  lg:px-24 px-5 justify-between fixed top-0 duration-500 ease-in left-0 w-full bg-stone-300 shadow-xl  h-[90px]    '
-          : 'flex items-center z-50   lg:px-24 px-5 justify-between  duration-500 ease-in left-0 w-full h-[90px]'
-      }
     >
-      {showMenu && (
-        <div className='absolute z-[999] inset-0 flex lg:hidden h-screen bg-black opacity-70 duration-700 ease-in'></div>
-      )}
       {showModal && <FIlterModal closeModal={handleCloseModal} />}
       <div className='flex items-center  bg-transparent lg:w-[10%]   justify-center'>
         <img
@@ -202,66 +152,35 @@ const Header = () => {
       </div>
       {/* ------------- MOBILE VIEW------------- */}
       {showMenu && (
-        <div className='flex lg:hidden  justify-between duration-500 h-[90vh] ease-out z-[999] rounded-lg px-4  bg-white w-[98%] absolute top-[50px] left-0 py-4 bg-transparent  text-white'>
-          <IoClose
-            className=' z-[999] absolute  text-white top-[-40px] right-5 text-3xl '
-            onClick={handleToggleMenu}
-          />
-          <div className='bg-white w-full mx-auto px-3 py-3'>
-            <ul className='flex flex-col  items-start gap-14 '>
-              <li className='text-2xl cursor-pointer text-gray-700 hover:text-white font-medium'>
-                <NavLink
-                  to='/'
-                  className={({ isActive }) =>
-                    isActive
-                      ? 'text-[#CF0807]  hover:text-[#EF5454] bg-transparent border-b-[2px] border-b-[#CF0807] duration-500 '
-                      : ' bg-transparent  duration-500  '
-                  }
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li className='text-2xl cursor-pointer text-gray-700 hover:text-[#CF0807] font-medium'>
-                <NavLink
-                  to='/category'
-                  className={({ isActive }) =>
-                    isActive
-                      ? 'text-[#CF0807] hover:text-[#EF5454] bg-transparent border-b-[2px] border-b-[#CF0807] duration-500 '
-                      : ' bg-transparent  duration-500  '
-                  }
-                >
-                  Category
-                </NavLink>
-              </li>
-              <li className='text-2xl cursor-pointer text-gray-700 hover:text-[#CF0807] font-medium'>
-              <NavLink
-              to='/article'
-              className={({ isActive }) =>
-                isActive
-                  ? 'text-[#CF0807] hover:text-[#EF5454] bg-transparent border-b-[2px] border-b-[#CF0807] duration-500 '
-                  : ' bg-transparent  duration-500  '
-              }
-            >
-              Articles
-            </NavLink>
-              </li>
+         <div className='flex lg:hidden  justify-between duration-500 h-[100vh] ease-out z-[999] rounded-lg px-4  bg-white w-[80%] absolute top-[50px] py-4 bg-transparent  text-white'>
+         <IoClose
+           className=' z-[999] absolute  text-white top-[-40px]  right-0 text-3xl '
+           onClick={handleToggleMenu}
+         />
+        
+           <ul className='flex flex-col  items-start gap-9 '>
+             <li className='text-lg cursor-pointer text-gray-700 hover:text-white font-medium'>
+               <NavLink to='/'>Home</NavLink>
+             </li>
+             <li className='text-lg cursor-pointer text-gray-700 hover:text-white font-medium'>
+               About
+             </li>
+             <li className='text-lg cursor-pointer text-gray-700 hover:text-white font-medium'>
+               Services
+             </li>
 
-              <li className='text-2xl cursor-pointer text-gray-700 hover:text-[#CF0807] font-medium'>
-              <NavLink className='bg-transparent'>Lifestyle</NavLink>
-              </li>
-              <li className='text-2xl cursor-pointer text-gray-700 hover:text-[#CF0807] font-medium'>
-              <NavLink className='bg-transparent'> Health (GHIR)</NavLink>
-              </li>
+             <li className='text-lg cursor-pointer text-gray-700 hover:text-white font-medium'>
+               Pricing
+             </li>
+             <li className='text-lg cursor-pointer text-gray-700 hover:text-white font-medium'>
+               Team
+             </li>
 
-              <li className='text-2xl cursor-pointer text-gray-700 hover:text-[#CF0807] font-medium'>
-              <NavLink className='bg-transparent'>Politics</NavLink>
-              </li>
-            </ul>
-          </div>
-        </div>
+             <li className='text-lg cursor-pointer text-gray-700 hover:text-white font-medium'>
+               Contact
+             </li>
+           </ul>
+         
+       </div>
       )}
     </div>
-  )
-}
-
-export default Header
