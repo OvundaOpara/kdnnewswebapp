@@ -23,7 +23,7 @@ const HeroContents = () => {
       <FIlterHeader />
       <div className='grid  xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 w-full  place-items-center gap-16 mt-14'>
         <div className='flex flex-col lg:w-[100%] w-[100%] '>
-          <h1 className='text-stone-300 text-5xl'>
+          <h1 className='text-stone-300 xl:text-5xl text-2xl '>
             The Power Of Connection Building Meaningful Relationship
           </h1>
           <div className='flex items-center my-4 justify-start gap-5 '>

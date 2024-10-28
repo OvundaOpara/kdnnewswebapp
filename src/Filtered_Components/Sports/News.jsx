@@ -2,6 +2,7 @@ import React from 'react'
 import { FaRegClock } from 'react-icons/fa'
 import { HERO } from '../../Data/Datas'
 import { author } from '../../assets/Images'
+import { Link } from 'react-router-dom'
 
 
 
@@ -33,13 +34,10 @@ const News = ({headline}) => {
               <span className='text-stone-300'>by</span> Stark{' '}
             </p>
           </div>
-          <div className='flex gap-5'>
-            <button className='bg-[#CF0807] hover:bg-[#EF5454] duration-300 ease-out text-slate-300 py-2 px-4 rounded-md '>
+          <div className='flex gap-2 xl:gap-5'>
+          <Link to="/article" className='bg-[#CF0807] hover:bg-[#EF5454] duration-300 text-slate-300 py-2 px-4 rounded-md '>
               See All
-            </button>
-            <button className='border-[#CF0807] text-stone-300 border-[2px] py-2 px-4 rounded-md'>
-              Learn More
-            </button>
+            </Link>
           </div>
         </div>
       ))}

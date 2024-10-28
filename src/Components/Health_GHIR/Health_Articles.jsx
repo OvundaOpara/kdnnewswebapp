@@ -2,14 +2,15 @@ import React from 'react'
 import { FaRegClock } from 'react-icons/fa'
 import { author } from '../../assets/Images'
 
-const Sports_Articles = () => {
+
+const Health_Articles = () => {
   return (
     <div className='lg:px-24 flex flex-col px-5'>
-      <h2 className='my-20 text-center t text-4xl text-stone-300'>
-        Trending Sport
-      </h2>
+    <h2 className='my-20 text-center t text-4xl text-stone-300'>
+      Trending Stories
+    </h2>
 
-      <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  items-center justify-center gap-12 mt-[10px] '>
+    <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  items-center justify-center gap-12 mt-[10px] '>
         <div className='flex flex-col lg:w-[100%] w-[100%] gap-3  '>
           <div className='flex flex-col h-[300px] gap-7  rounded-xl group '>
             <div className='flex bg-stone-600 h-[150px] items-center justify-center rounded-xl w-full  origin-top group-hover:scale-y-[180%] transition-all duration-500 ease-in-out'></div>
@@ -139,8 +140,9 @@ const Sports_Articles = () => {
           </div>
         </div>
       </div>
-    </div>
+  </div>
+  
   )
 }
 
-export default Sports_Articles
+export default Health_Articles

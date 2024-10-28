@@ -1,7 +1,6 @@
 import React from 'react'
 import FIlterHeader from '../../Components/FIlterHeader'
-import { HEALTH } from '../../Data/Datas'
-
+import {  POLITICS } from '../../Data/Datas'
 
 const Hero = () => {
   return (
@@ -10,7 +9,7 @@ const Hero = () => {
       
       <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4    items-center justify-center lg:gap-10 my-[10px] '>
 
-        {HEALTH.map((item, index) => (
+        {POLITICS.map((item, index) => (
           <div
             key={index}
             className='flex lg:flex-col items-center justify-center w-[100%] lg:h-[400px] gap-2 lg:w-[100%] px-3 py-3 rounded-xl '

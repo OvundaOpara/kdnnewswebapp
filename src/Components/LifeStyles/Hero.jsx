@@ -1,6 +1,7 @@
 import React from 'react'
-import FIlterHeader from '../../Components/FIlterHeader'
-import { HEALTH } from '../../Data/Datas'
+import FIlterHeader from '../FIlterHeader'
+import { LIFESTYLE } from '../../Data/Datas'
+
 
 
 const Hero = () => {
@@ -10,7 +11,7 @@ const Hero = () => {
       
       <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4    items-center justify-center lg:gap-10 my-[10px] '>
 
-        {HEALTH.map((item, index) => (
+        {LIFESTYLE.map((item, index) => (
           <div
             key={index}
             className='flex lg:flex-col items-center justify-center w-[100%] lg:h-[400px] gap-2 lg:w-[100%] px-3 py-3 rounded-xl '
@@ -21,7 +22,7 @@ const Hero = () => {
               <h1 className='text-2xl text-stone-300 text-left my-1'>
                 {item.name}
               </h1>
-              <button className='bg-[#CF0807] hover:bg-[#EF5454] duration-300 ease-out py-2 w-[100%] text-stone-300 text-lg rounded-md '>
+              <button className='bg-[#CF0807] hover:bg-[#EF5454] duration-300 ease-out  py-2 w-[100%] text-stone-300 text-lg rounded-md '>
                 Explore{' '}
               </button>
             </div>

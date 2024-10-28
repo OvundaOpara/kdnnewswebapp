@@ -19,13 +19,13 @@ const FIlterHeader = () => {
             <NavLink to="/hollywood" className={({isActive}) => isActive ? "text-[#CF0807] border-b-[2px] border-b-[#CF0807] " : " "}>HollyWood</NavLink>
           </li>
           <li className='text-stone-300 cursor-pointer  border-transparent  hover:text-[#CF0807] border-b-[2px] hover:border-b-[#CF0807] '>
-            <NavLink to="/lifestyle" className={({isActive}) => isActive ? "text-[#CF0807] border-b-[2px] border-b-[#CF0807] " : " "}>LifeStyle</NavLink>
+            <NavLink to="/Cate_lifestyle" className={({isActive}) => isActive ? "text-[#CF0807] border-b-[2px] border-b-[#CF0807] " : " "}>LifeStyle</NavLink>
           </li>
           <li className='text-stone-300 cursor-pointer  border-transparent  hover:text-[#CF0807] border-b-[2px] hover:border-b-[#CF0807] '>
             <NavLink to="/fashion" className={({isActive}) => isActive ? "text-[#CF0807] border-b-[2px] border-b-[#CF0807] " : " "}>Fashion</NavLink>
           </li>
           <li className='text-stone-300 cursor-pointer  border-transparent  hover:text-[#CF0807] border-b-[2px] hover:border-b-[#CF0807] '>
-            Health(GHIR)
+          <NavLink to="/health" className={({isActive}) => isActive ? "text-[#CF0807] border-b-[2px] border-b-[#CF0807] " : " "}>Health(GHIR)</NavLink>
           </li>
         </ul>
       </div>

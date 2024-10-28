@@ -1,7 +1,6 @@
 import React from 'react'
 import FIlterHeader from '../../Components/FIlterHeader'
-import { HEALTH } from '../../Data/Datas'
-
+import { HEALTH, MOVIES } from '../../Data/Datas'
 
 const Hero = () => {
   return (

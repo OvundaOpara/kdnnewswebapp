@@ -278,6 +278,54 @@ export const FASHION = [
 
 
 ];
+export const HEALTH = [
+    {
+
+        name: "Infectious Diseases ",
+
+    },
+    {
+
+        name: "Environmental and Occupational Health",
+
+    },
+    {
+
+        name: "Maternal and Child Health",
+
+    },
+    {
+
+        name: "Athleisure",
+
+    }
+
+
+];
+export const POLITICS = [
+    {
+
+        name: "Political Ideologies ",
+
+    },
+    {
+
+        name: "International Relations and Global Politics",
+
+    },
+    {
+
+        name: "Human Rights and Civil Liberties",
+
+    },
+    {
+
+        name: "Electoral Systems and Political Parties ",
+
+    }
+
+
+];
 export const QZ = [
     {
 

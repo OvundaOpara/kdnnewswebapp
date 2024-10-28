@@ -1,7 +1,8 @@
 import React from 'react'
 import { FaRegClock } from 'react-icons/fa'
-import { HERO } from '../../Data/Datas'
+
 import { author } from '../../assets/Images'
+import { HERO } from '../../Data/Datas'
 import { Link } from 'react-router-dom'
 
 
