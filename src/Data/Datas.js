@@ -69,7 +69,7 @@ export const AI = [
 export const TRENDING = [
     {
 
-        
+
         name: "Elections",
         title: "Election Updates: What’s at Stake?",
         dec: "A comprehensive breakdown of the upcoming elections and their implications."
@@ -228,7 +228,7 @@ export const HOLLYWOOD = [
         name: "Entertainment & Distribution",
 
     }
-    
+
 ];
 export const LIFESTYLE = [
     {
@@ -397,3 +397,12 @@ export const FILTER = [
         category: 'A'
     },
 ];
+
+export const FAQ = [
+    { question: 'How do I get latest news and stay inform in KDN', answer: "I don't know, but the flag is a big plus.Lorem ipsum dolor sit amet consectetur adipisicing elit.Quas cupiditate laboriosam fugiat I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat..." },
+    { question: 'How do I get latest news and stay inform in KDN', answer: "I don't know, but the flag is a big plus.Lorem ipsum dolor sit amet consectetur adipisicing elit.Quas cupiditate laboriosam fugiat I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat..." },
+    { question: 'How do I get latest news and stay inform in KDN', answer: "I don't know, but the flag is a big plus.Lorem ipsum dolor sit amet consectetur adipisicing elit.Quas cupiditate laboriosam fugiat I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat..." },
+    { question: 'How do I get latest news and stay inform in KDN', answer: "I don't know, but the flag is a big plus.Lorem ipsum dolor sit amet consectetur adipisicing elit.Quas cupiditate laboriosam fugiat I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat..." },
+    { question: 'How do I get latest news and stay inform in KDN', answer: "I don't know, but the flag is a big plus.Lorem ipsum dolor sit amet consectetur adipisicing elit.Quas cupiditate laboriosam fugiat I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat..." },
+   
+]

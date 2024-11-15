@@ -7,12 +7,12 @@ import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
-    <div className='lg:px-24 flex flex-col px-5 my-6 '>
+    <div className='xl:px-[60px] lg:px-[60px] px-[20px] '>
       <HeroContents />
 
       <div className='grid xl:grid-cols-4 lg:grid-cols-2 grid-cols-1 place-items-center w-full  gap-12 mt-[50px] '>
         {HERO.map((item, index) => (
-          <div className='flex flex-col w-[100%] lg:w-[100%]  '>
+          <div className='flex flex-col w-[100%] lg:w-[100%]  ' key={index}>
             <div className='flex bg-stone-600 h-[200px] items-center justify-center rounded-xl w-full'></div>
             <h1 className='text-lg text-stone-300'>{item.name}</h1>
             <p className='text-sm text-stone-300'>{item.title}</p>

@@ -15,7 +15,7 @@ const Quizzes = () => {
 
       <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 items-center justify-center place-items-center w-full gap-10 mt-[10px] '>
         {QZ.map((item, index) => (
-          <div className='flex flex-col w-[100%] h-[400px] items-center justify-center lg:w-[100%]  px-3 py-3 rounded-xl '>
+          <div key={index} className='flex flex-col w-[100%] h-[400px] items-center justify-center lg:w-[100%]  px-3 py-3 rounded-xl '>
             <h1 className='text-2xl text-stone-300 text-center'>{item.name}</h1>
             <p className='text-lg text-center  my-4 text-stone-400'>
               {item.title}

@@ -1,23 +1,29 @@
 import React, { useEffect, useState } from 'react'
-import { FooterIcon, HeroIcon } from '../assets/Icons/Index'
+import {
+  filteralt,
+  FooterIcon,
+  HeroIcon,
+  notify,
+  search
+} from '../assets/Icons/Index'
 import { FaBell, FaSearch } from 'react-icons/fa'
 import { IoIosFunnel } from 'react-icons/io'
 import { RiMenu2Line } from 'react-icons/ri'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import FIlterModal from './FIlterModal'
 import { IoClose } from 'react-icons/io5'
 import { FaUser } from 'react-icons/fa6'
-import Register from './Profile/Register'
-import Login from './Profile/Login'
+import { author } from '../assets/Images'
+import Account_modal from './Accounts/Account_modal'
 
-const Header = () => {
+const Header = ({ user, setUser }) => {
   const [showMenu, SetShowMenu] = useState(false)
   const [navbar, setNavbar] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [showModal, setShowModal] = useState(false)
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
-  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+
+  const [accountModal, setAccountModal] = useState(false)
 
   const toggleSearchBar = () => {
     setIsSearchOpen(!isSearchOpen)
@@ -27,7 +33,7 @@ const Header = () => {
   //HANDLE SEARCH
   const handleSearch = () => {
     console.log('Searching for:', searchQuery)
-    setIsSearchOpen(false) 
+    setIsSearchOpen(false)
   }
 
   const handleKeyDown = event => {
@@ -39,7 +45,7 @@ const Header = () => {
 
   useEffect(() => {
     setShowModal(false)
-    
+    setAccountModal(false)
   }, [])
 
   const handleCloseModal = () => {
@@ -47,20 +53,14 @@ const Header = () => {
     SetShowMenu(false)
   }
 
-  const openRegister = () => {
-    setIsRegisterOpen(true);
-    setIsLoginOpen(false);
-  };
+  const handleModalsBehavior = () => {
+    SetShowMenu(false)
+  }
 
-  const openLogin = () => {
-    setIsLoginOpen(true);
-    setIsRegisterOpen(false);
-  };
-
-  const closeModals = () => {
-    setIsLoginOpen(false);
-    setIsRegisterOpen(false);
-  };
+  const handleAccoutModal = () => {
+    setAccountModal(!accountModal)
+    setUser(false)
+  }
 
   const handleToggleMenu = () => {
     SetShowMenu(!showMenu)
@@ -88,8 +88,8 @@ const Header = () => {
     <div
       className={
         navbar
-          ? 'flex items-center z-50  lg:px-24 px-5 justify-between fixed top-0 duration-500 ease-in left-0 w-full bg-stone-300 shadow-xl  h-[90px]    '
-          : 'flex items-center z-50  lg:px-24 px-5 justify-between relative duration-500 ease-in left-0 w-full h-[90px]'
+          ? 'flex items-center z-30  xl:px-[60px] lg:px-[60px] px-[20px] justify-between fixed top-0 duration-500 ease-in left-0 w-full bg-stone-300 shadow-xl  h-[90px]    '
+          : 'flex items-center z-30  xl:px-[60px] lg:px-[60px] px-[20px] bg-background justify-between relative duration-500 ease-in left-0 w-full h-[90px]'
       }
     >
       {showMenu && (
@@ -99,8 +99,12 @@ const Header = () => {
         ></div>
       )}
       {showModal && <FIlterModal closeModal={handleCloseModal} />}
-      {isRegisterOpen && <Register onClose={closeModals} onSwitchToLogin={openLogin}  />}
-      {isLoginOpen &&  <Login  onClose={closeModals} onSwitchToRegister={openRegister}/>}
+      {accountModal && (
+        <Account_modal
+          onAccount={handleAccoutModal}
+          closeModal={setAccountModal}
+        />
+      )}
 
       <div className='flex items-center  bg-transparent lg:w-[10%]   justify-center'>
         <img
@@ -113,7 +117,7 @@ const Header = () => {
 
       {/* ------------- DESKTOP VIEW------------- */}
 
-      <div className='hidden md:hidden w-[100%] xl:flex bg-transparent  items-center justify-around mx-auto'>
+      <div className='hidden md:hidden w-[100%] xl:flex   items-center justify-around mx-auto'>
         <ul className='flex items-center gap-5 bg-transparent'>
           <li
             className={
@@ -228,39 +232,58 @@ const Header = () => {
         </ul>
       </div>
 
-      <div className='lg:flex items-center justify-between bg-transparent   hidden gap-7 '>
-        <FaUser
-          onClick={openRegister} 
-          className={
-            navbar
-              ? 'text-stone-800 bg-transparent text-4xl hover:bg-stone-700 rounded-md p-2  border-[1px] border-stone-700 cursor-pointer duration-300 ease-in'
-              : 'text-stone-300 text-4xl duration-300 hover:bg-stone-700 ease-in p-2 border-[1px] border-stone-700 rounded-md cursor-pointer'
-          }
-        />
-        <FaSearch
+      <div className='lg:flex items-center justify-between bg-transparent w-[270px]  hidden gap-[16px] '>
+        {user ? (
+          <>
+            <img
+              src={author}
+              className='w-[48px] h-[48px] cursor-pointer rounded-full'
+              alt=''
+              onClick={() => setAccountModal(prev => !prev)}
+            />
+          </>
+        ) : (
+          <Link
+            to='/register'
+            className={
+              navbar
+                ? 'text-stone-800 text-[16px]  leading-[19.2px]  cursor-pointer w-[170px]  duration-300 ease-in'
+                : 'text-stone-300 text-[16px] leading-[19.2px] duration-300 ease-in  w-[170px]   rounded-md cursor-pointer'
+            }
+          >
+            Register now
+          </Link>
+        )}
+        <img
+          src={search}
           onClick={toggleSearchBar}
           className={
             navbar
-              ? 'text-stone-800 bg-transparent text-4xl rounded-md p-2  border-[1px] border-stone-700 hover:bg-stone-700 cursor-pointer duration-300 ease-in'
-              : 'text-stone-300 text-4xl duration-300 ease-in p-2 border-[1px] border-stone-700 hover:bg-stone-700 rounded-md cursor-pointer'
+              ? 'text-stone-800 bg-transparent w-[40px] h-[40px] rounded-md p-2  border-[1px] border-stone-700 hover:bg-stone-700 cursor-pointer duration-300 ease-in'
+              : 'text-stone-300 w-[40px] h-[40px] duration-300 ease-in p-2 border-[1px] border-stone-700 hover:bg-stone-700 rounded-md cursor-pointer'
           }
+          alt=''
         />
 
-        <FaBell
+        <img
+          src={notify}
           className={
             navbar
-              ? 'text-stone-800 bg-transparent text-4xl rounded-md p-2  border-[1px] border-stone-700 cursor-pointer duration-300 ease-in'
-              : 'text-stone-300 text-4xl duration-300 ease-in p-2 border-[1px] border-stone-700 rounded-md cursor-pointer'
+              ? 'text-stone-800 bg-transparent w-[40px] h-[40px] rounded-md p-2  border-[1px] border-stone-700 cursor-pointer duration-300 ease-in'
+              : 'text-stone-300 w-[40px] h-[40px] duration-300 ease-in p-2 border-[1px] border-stone-700 rounded-md cursor-pointer'
           }
+          alt=''
         />
 
-        <IoIosFunnel
+        <img
+          src={filteralt}
           onClick={() => setShowModal(prevState => !prevState)}
           className={
             navbar
-              ? 'text-stone-800 bg-transparent text-4xl hover:bg-stone-700 rounded-md p-2  border-[1px] border-stone-700 cursor-pointer duration-300 ease-in'
-              : 'text-stone-300 text-4xl duration-300 hover:bg-stone-700 ease-in p-2 border-[1px] border-stone-700 rounded-md cursor-pointer'
+              ? 'text-stone-800 bg-transparent w-[40px] h-[40px] hover:bg-stone-700 rounded-md p-2  border-[1px] border-stone-700 cursor-pointer duration-300 ease-in'
+              : 'text-stone-300 w-[40px] h-[40px] duration-300 hover:bg-stone-700 ease-in p-2 border-[1px] border-stone-700 rounded-md cursor-pointer'
           }
+          alt=''
         />
       </div>
 
@@ -371,21 +394,40 @@ const Header = () => {
                 </NavLink>
               </li>
             </ul>
-            <div className='flex items-center justify-start bg-transparent my-10   xl:hidden gap-20 '>
-              <FaUser
-                onClick={openRegister}
-                className='text-stone-300 text-4xl duration-300 bg-stone-900 ease-in p-2 border-[1px] border-stone-700 rounded-md cursor-pointer'
-              />
+            <div className='flex items-center justify-start bg-transparent my-10   xl:hidden gap-[16px] '>
+              {user ? (
+                <>
+                  <img
+                    src={author}
+                    onClick={() => {
+                      SetShowMenu(false) // Close the menu
+                      setAccountModal(true) // Open the modal
+                    }}
+                    className='w-[48px] h-[48px] rounded-full'
+                    alt=''
+                  />
+                </>
+              ) : (
+                <Link
+                  onClick={() => {
+                    SetShowMenu(false) // Close the menu
+                  }}
+                  to='/register'
+                  className='text-stone-800 text-[20px]  leading-[19.2px]  cursor-pointer w-[125px]   duration-300 ease-in'
+                >
+                  Register now
+                </Link>
+              )}
               <FaSearch
                 onClick={toggleSearchBar}
-                className='text-stone-300 text-4xl duration-300 ease-in p-2 border-[1px] border-stone-700 bg-stone-900 rounded-md cursor-pointer'
+                className='text-stone-300 w-[40px] h-[40px] duration-300 ease-in p-2 border-[1px] border-stone-700 bg-stone-900 rounded-md cursor-pointer'
               />
 
-              <FaBell className='text-stone-300 text-4xl duration-300 ease-in p-2 border-[1px] bg-stone-900 border-stone-700 rounded-md cursor-pointer' />
+              <FaBell className='text-stone-300 w-[40px] h-[40px] duration-300 ease-in p-2 border-[1px] bg-stone-900 border-stone-700 rounded-md cursor-pointer' />
 
               <IoIosFunnel
                 onClick={handleCloseModal}
-                className='text-stone-300 text-4xl duration-300 bg-stone-900 ease-in p-2 border-[1px] border-stone-700 rounded-md cursor-pointer'
+                className='text-stone-300 w-[40px] h-[40px] duration-300 bg-stone-900 ease-in p-2 border-[1px] border-stone-700 rounded-md cursor-pointer'
               />
             </div>
           </div>

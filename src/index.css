@@ -8,6 +8,7 @@
 
   font-family: 'Bricolage Grotesque', sans-serif;
   scroll-behavior: smooth;
+  overscroll-behavior: none;
 }
 
 ::-webkit-scrollbar {

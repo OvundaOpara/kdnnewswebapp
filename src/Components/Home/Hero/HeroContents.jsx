@@ -15,19 +15,19 @@ const HeroContents = () => {
   let describtion = dec
 
   if (!showFullDescribtion) {
-    describtion = dec.substring(0, 700) + '...'
+    describtion = dec.substring(0, 300) + '...'
   }
 
   return (
     <div>
       <FIlterHeader />
       <div className='grid  xl:grid-cols-2 lg:grid-cols-1 md:grid-cols-1 grid-cols-1 w-full  place-items-center gap-16 mt-14'>
-        <div className='flex flex-col lg:w-[100%] w-[100%] '>
-          <h1 className='text-stone-300 xl:text-5xl text-2xl '>
+        <div className='flex flex-col lg:w-[100%] w-[100%] gap-[37px] '>
+          <h1 className='text-stone-300 xl:text-[48px] font-[700] leading-[57.6px]   text-2xl '>
             The Power Of Connection Building Meaningful Relationship
           </h1>
-          <div className='flex items-center my-4 justify-start gap-5 '>
-            <p className='text-stone-400 flex items-center gap-2 justify-center'>
+          <div className='flex items-center  justify-start gap-5 '>
+            <p className='text-stone-400 text-[20px] leading-[24px] flex items-center gap-2 justify-center'>
               {' '}
               <FaRegClock /> 23 Sept 2024{' '}
             </p>
@@ -39,11 +39,11 @@ const HeroContents = () => {
                 width={30}
                 className='rounded-full'
               />{' '}
-              <span className='text-stone-300'>by</span> Stark{' '}
+              <span className='text-stone-300 text-[20px] leading-[24px]'>by</span> Stark{' '}
             </p>
           </div>
 
-          <p className='text-stone-300 text-xl '>
+          <p className='text-stone-300 w-[90%] text-[20px] leading-[24px] '>
             {describtion}{' '}
             <p
               onClick={() => setShowFullDescribtion(prevState => !prevState)}
@@ -56,7 +56,7 @@ const HeroContents = () => {
         </div>
 
         <div className='grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 place-items-center  gap-24 w-full'>
-          <div className='flex flex-wrap bg-stone-600 hover:scale-110 duration-300 ease-in cursor-pointer h-[400px] items-center justify-center rounded-xl lg:w-[500px] w-[100%] xl:w-[400px] '>
+          <div className='flex flex-wrap bg-stone-600 hover:scale-110 duration-300 ease-in cursor-pointer h-[382px] items-center justify-center rounded-xl lg:w-[500px] w-[100%] xl:w-[400px] '>
             <CiImageOn className='text-white bg-stone-600 text-3xl' />
           </div>
           <div className='flex flex-col group relative rounded-xl h-[400px]  lg:w-[100%] w-full xl:w-[100%]  '>

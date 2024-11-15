@@ -5,7 +5,7 @@ import { author } from '../../assets/Images'
 
 const Lifestyle_Articles = () => {
   return (
-    <div className='lg:px-24 flex flex-col px-5'>
+    <div className=' flex flex-col px-[60px]'>
       <h2 className='my-20 text-center t text-4xl text-stone-300'>
         Trending Articles
       </h2>

@@ -3,7 +3,7 @@ import { CiImageOn } from 'react-icons/ci'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { ADS } from '../../../Data/Datas'
+import { ADS } from '../../Data/Datas'
 
 const Ads = () => {
   var settings = {
@@ -23,7 +23,7 @@ const Ads = () => {
   }
 
   return (
-    <div className='lg:px-24 px-5 my-24'>
+    <div className='px-[60px] my-24'>
       <Slider {...settings} className='flex items-center justify-center '>
         {ADS.map((ads, index) => (
           <div

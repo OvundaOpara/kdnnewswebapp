@@ -1,4 +1,4 @@
-import react from 'react'
+import react, { useState } from 'react'
 import {
   Route,
   createBrowserRouter,
@@ -20,32 +20,40 @@ import Account from './Pages/Account'
 import Lifestyle from './Pages/Lifestyle'
 import Health_GHIR from './Pages/Health_GHIR'
 import Politics from './Pages/Politics'
-import Login from './Components/Profile/Login'
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<MainLayout />}>
-      <Route index element={<Home />} />
-      <Route path='/category' element={<Categories />} />
-      <Route path='/article' element={<Articles />} />
-      <Route path='/movies' element={<Movies_index />} />
-      <Route path='/sport' element={<Sport_index />} />
-      <Route path='/hollywood' element={<Hollywood_index />} />
-      <Route path='/Cate_lifestyle' element={<Lifestyle_index />} />
-      <Route path='/fashion' element={<Fashion_index />} />
-      <Route path='/account' element={< Account/>} />
-      <Route path='/lifestyle' element={< Lifestyle/>} />
-      <Route path='/health' element={< Health_GHIR/>} />
-      <Route path='/politics' element={< Politics/>} />
-    
-      
-    </Route>
-  )
-)
+import Login from './Components/Auth/Login'
+import Register from './Components/Auth/Register'
+import Account_Setting from './Components/Accounts/Account_Setting.jsx/Account_Setting'
+import Save_Post from './Components/Save_Post/Save_Post'
+import FAQ from './Pages/FAQ'
 
 function App () {
+const [user, setUser] = useState(false)
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<MainLayout user={user} setUser={setUser}/>}>
+        <Route index element={<Home />} />
+        <Route path='/category' element={<Categories />} />
+        <Route path='/article' element={<Articles />} />
+        <Route path='/movies' element={<Movies_index />} />
+        <Route path='/sport' element={<Sport_index />} />
+        <Route path='/hollywood' element={<Hollywood_index />} />
+        <Route path='/Cate_lifestyle' element={<Lifestyle_index />} />
+        <Route path='/fashion' element={<Fashion_index />} />
+        <Route path='/lifestyle' element={<Lifestyle />} />
+        <Route path='/health' element={<Health_GHIR />} />
+        <Route path='/politics' element={<Politics />} />
+        <Route path='/login' element={<Login setUser={setUser} />} />
+        <Route path='/register' element={<Register setUser={setUser} />} />
+        <Route path='/account_setting' element={<Account_Setting setUser={setUser}/>} />
+        <Route path='/save_post' element={<Save_Post />} />
+        <Route path='/FAQ' element={<FAQ />} />
+      </Route>
+    )
+  )
+
   return (
-    <div className='overflow-x-hidden bg-black '>
+    <div className='bg-background'>
       <RouterProvider router={router} />
     </div>
   )

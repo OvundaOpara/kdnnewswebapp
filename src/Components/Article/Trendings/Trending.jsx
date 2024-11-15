@@ -1,12 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaRegClock } from 'react-icons/fa'
 import { author } from '../../../assets/Images'
 import { FaBookmark } from 'react-icons/fa6'
 import { SlOptionsVertical } from 'react-icons/sl'
 import { TRENDING } from '../../../Data/Datas'
 import { CiImageOn } from 'react-icons/ci'
+import { MdOutlineShare } from 'react-icons/md'
+import { FaFacebook, FaTelegram  } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 const Trending = () => {
+  const [isMessageVisible, setIsMessageVisible] = useState(false)
+  const [isShareVisible, setIsShareVisible] = useState(false)
+
+  const showMessage = () => {
+    setIsMessageVisible(true)
+  }
+
+  useEffect(() => {
+    if (isMessageVisible) {
+      const timer = setTimeout(() => {
+        setIsMessageVisible(false)
+      }, 3000)
+
+      return () => clearTimeout(timer)
+    }
+  }, [isMessageVisible])
+
   return (
     <div className=' flex flex-col lg:px-5 xl:px-5 px-5 my-10'>
       <p className='text-white bg-[#CF0807] mb-6 py-2 lg:w-[10%] w-[200px] text-center rounded-lg'>
@@ -36,9 +56,26 @@ const Trending = () => {
               </p>
             </div>
           </div>
-          <div className='flex items-start justify-start gap-7 '>
-            <FaBookmark className='text-stone-800  text-5xl rounded-full p-3   bg-stone-300' />
-            <SlOptionsVertical className='text-stone-800  text-5xl rounded-full p-3   bg-stone-300' />
+          <div className='flex items-start relative justify-start gap-7 '>
+            {isMessageVisible && (
+              <div className='w-[135px] px-5 bg-stone-600 text-center text-white absolute flex items-center justify-center top-12 right-8 rounded-lg'>
+                <p className=''>Save Successful</p>
+              </div>
+            )}
+            <FaBookmark
+              onClick={showMessage}
+              className='text-stone-800 cursor-pointer  text-5xl rounded-full p-3   bg-stone-300'
+            />
+
+            <MdOutlineShare onClick={() => setIsShareVisible(prev => !prev)} className='text-stone-800 cursor-pointer  text-5xl rounded-full p-3   bg-stone-300' />
+            {isShareVisible && (
+              <div className='w-[185px] gap-[16px] py-2 px-5 bg-stone-600 text-center text-white absolute flex flex-col items-center justify-center top-12 right-1  rounded-lg'>
+                <p className='text-[20px] flex items-center gap-[8px] w-[125px] text-center cursor-pointer '><FaFacebook className='text-blue-600 bg-white rounded-full '/> Facebook</p>
+                <p className='text-[20px] flex items-center gap-[8px] w-[125px] text-center cursor-pointer '><IoLogoWhatsapp className='text-green-600 bg-white rounded-full'/>WhatsApp</p>
+                <p className='text-[20px] flex items-center gap-[8px] w-[125px] text-center cursor-pointer '><FaTelegram className='text-blue-700 bg-white rounded-full'/>Telegram</p>
+                
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -162,12 +199,21 @@ const Trending = () => {
           <h1 className='text-4xl font-bold text-stone-300 '>Top stories</h1>
           <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-1 items-center justify-center  gap-12 mt-[50px] '>
             {TRENDING.map((item, index) => (
-              <div key={index} className='flex flex-col w-[100%]  group relative rounded-xl pb-2 '>
+              <div
+                key={index}
+                className='flex flex-col w-[100%]  group relative rounded-xl pb-2 '
+              >
                 <div className='flex bg-stone-600 items-center justify-center rounded-xl w-full h-[200px] transform scale-y-100 transition-transform duration-300 ease-out group-hover:scale-y-[2] origin-top '></div>
                 <div className='flex flex-col px-2 mt-[10px] z-40 bg-transparent'>
-                  <h1 className='text-xl text-stone-300 bg-transparent'>{item.name}</h1>
-                  <p className='text-lg text-stone-300 my-2 bg-transparent'>{item.title}</p>
-                  <p className='text-sm text-stone-300 bg-transparent'>{item.dec}</p>
+                  <h1 className='text-xl text-stone-300 bg-transparent'>
+                    {item.name}
+                  </h1>
+                  <p className='text-lg text-stone-300 my-2 bg-transparent'>
+                    {item.title}
+                  </p>
+                  <p className='text-sm text-stone-300 bg-transparent'>
+                    {item.dec}
+                  </p>
                   <div className='flex items-center bg-transparent my-4 justify-start gap-5 '>
                     <p className='text-stone-400 text-sm bg-transparent flex items-center gap-1 justify-center'>
                       {' '}
@@ -181,7 +227,8 @@ const Trending = () => {
                         width={20}
                         className='rounded-full'
                       />{' '}
-                      <span className='text-stone-300 bg-transparent'>by</span> Stark{' '}
+                      <span className='text-stone-300 bg-transparent'>by</span>{' '}
+                      Stark{' '}
                     </p>
                   </div>
                 </div>
